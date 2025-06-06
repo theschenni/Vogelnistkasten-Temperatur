@@ -63,19 +63,30 @@ void loop()
         display.print("Temperatur:   ");
         display.print(temperature_DHT22);
         display.println(" C");
+        /*
         display.print("Feuchtigkeit: ");
         display.print(humidity_DHT22);
         display.println(" % \n");
+        */
 
         display.println("DHT-11:");
         display.print("Temperatur:   ");
         display.print(temperature_DHT11);
-        display.println(" C");
+        display.println(" C \n");
+        /*
         display.print("Feuchtigkeit: ");
         display.print(humidity_DHT11);
         display.println(" %");
+        */
+
+        float deltaTemp = abs(temperature_DHT22 - temperature_DHT11);
+        Serial.println(deltaTemp);
+
+        display.println("Delta Temperatur :");
+        display.print(deltaTemp);
+        display.println("C");
 
         display.display();
-        delay(1000);
     }
+    delay(1000);
 }
