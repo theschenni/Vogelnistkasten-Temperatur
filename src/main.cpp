@@ -26,24 +26,14 @@ void setup()
         Serial.println(F("SSD1306 allocation failed"));
     }
     display.clearDisplay();
-    display.setTextSize(6);
+    display.setTextSize(2);
     display.setTextColor(SSD1306_WHITE);
     display.setCursor(0, 0);
-    display.println(":)");
+    display.println("Nistkasten Temp");
+    display.println("Startet...");
     display.display();
     delay(2000);
     display.setTextSize(1);
-    display.setTextColor(SSD1306_WHITE);
-    /*
-    for (int i = 0; i <= 100; i++)
-    {
-        display.clearDisplay();
-        display.setCursor(0, 0); // Set position to top-left
-        display.println(i);
-        display.display();
-        delay(100);
-    }
-    */
 }
 
 void loop()
@@ -54,7 +44,9 @@ void loop()
     for (int i = 0; i < 2; i++)
     {
         float humidity_DHT11 = dht11.readHumidity();
-        float temperature_DHT11 = dht11.readTemperature();
+        float temperature_DHT11 = dht11.readTemperature(); //   Celsius
+
+        float deltaTemp = abs(temperature_DHT22 - temperature_DHT11);
 
         display.clearDisplay();
         display.setCursor(0, 0);
@@ -79,14 +71,12 @@ void loop()
         display.println(" %");
         */
 
-        float deltaTemp = abs(temperature_DHT22 - temperature_DHT11);
-        Serial.println(deltaTemp);
-
         display.println("Delta Temperatur :");
         display.print(deltaTemp);
         display.println("C");
 
         display.display();
+
+        delay(500);
     }
-    delay(1000);
 }
