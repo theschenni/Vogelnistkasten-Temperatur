@@ -1,7 +1,7 @@
 #include <Arduino.h>
-#include <Wire.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
+#include <Wire.h> //I2C Communication
+#include <Adafruit_GFX.h> //Graphics lib for display
+#include <Adafruit_SSD1306.h> //Monochrome OLED display library
 #include <DHT.h>
 
 #define SCREEN_WIDTH 128 // OLED width, in pixels
