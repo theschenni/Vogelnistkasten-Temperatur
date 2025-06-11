@@ -9,9 +9,10 @@
 #define DHT11PIN 4
 #define DHT22PIN 13
 
+#define greenLed 11
+#define redLed 12
+
 int counter = 0;
-int greenLed = 23; //<to be defined)
-int redLed = 23;
 
 DHT dht11(DHT11PIN, DHT11); // Objects for both sensors
 DHT dht22(DHT22PIN, DHT22);
@@ -29,6 +30,10 @@ void setup()
     { // 0x3C is common address, can be 0x3D sometimes
         Serial.println(F("SSD1306 allocation failed"));
     }
+
+    pinMode(greenLed, OUTPUT);
+    pinMode(redLed, OUTPUT);
+
     display.clearDisplay();
     display.setTextSize(2);
     display.setTextColor(SSD1306_WHITE);
