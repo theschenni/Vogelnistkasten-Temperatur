@@ -14,7 +14,7 @@ DHT dht22(DHT22PIN, DHT22);
 
 // OLED reset pin (set to -1 if sharing Arduino reset pin)
 #define OLED_RESET -1 //Resets display if Arduino gets reset
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET); //Declares display object
 
 void setup()
 {
