@@ -77,6 +77,6 @@ void loop()
 
         display.display();
 
-        delay(500);
+        delay(1000);
     }
 }
