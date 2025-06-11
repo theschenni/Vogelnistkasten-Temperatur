@@ -60,8 +60,8 @@ void loop()
         display.clearDisplay();
         display.setCursor(0, 0);
 
-        display.println("DHT-22:");
-        display.print("Temperatur:   ");
+        display.println("Innen-");
+        display.print("temperatur:   ");
         display.print(temperature_DHT22);
         display.println(" C");
         /*
@@ -70,8 +70,8 @@ void loop()
         display.println(" % \n");
         */
 
-        display.println("DHT-11:");
-        display.print("Temperatur:   ");
+        display.println("Aussen-");
+        display.print("temperatur:   ");
         display.print(temperature_DHT11);
         display.println(" C \n");
         /*
