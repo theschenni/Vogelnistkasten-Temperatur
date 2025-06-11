@@ -41,7 +41,7 @@ void loop()
     float humidity_DHT22 = dht22.readHumidity();
     float temperature_DHT22 = dht22.readTemperature(); //Celsius
 
-    for (int i = 0; i < 2; i++
+    for (int i = 0; i < 2; i++)
     {
         float humidity_DHT11 = dht11.readHumidity();
         float temperature_DHT11 = dht11.readTemperature(); //Celsius
