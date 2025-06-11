@@ -80,7 +80,7 @@ void loop()
         display.println(" %");
         */
 
-        display.println("Delta Temperatur :");
+        display.println("Delta Temperatur:");
         display.print(deltaTemp);
         display.println("C");
 
