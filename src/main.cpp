@@ -9,7 +9,7 @@
 #define DHT11PIN 4
 #define DHT22PIN 13
 
-DHT dht11(DHT11PIN, DHT11);
+DHT dht11(DHT11PIN, DHT11); //Objects for both sensors
 DHT dht22(DHT22PIN, DHT22);
 
 // OLED reset pin (set to -1 if sharing Arduino reset pin)
