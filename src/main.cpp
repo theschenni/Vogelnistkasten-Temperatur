@@ -19,7 +19,7 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET); //Decl
 void setup()
 {
     Serial.begin(9600);
-    dht11.begin();
+    dht11.begin(); //Initialize sensors
     dht22.begin();
     if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C))
     { // 0x3C is common address, can be 0x3D sometimes
@@ -29,9 +29,9 @@ void setup()
     display.setTextSize(2);
     display.setTextColor(SSD1306_WHITE);
     display.setCursor(0, 0);
-    display.println("Nistkasten Temp");
+    display.println("Nistkasten Temp"); 
     display.println("Startet...");
-    display.display();
+    display.display(); //Writing frame buffer to display
     delay(2000);
     display.setTextSize(1);
 }
@@ -39,12 +39,12 @@ void setup()
 void loop()
 {
     float humidity_DHT22 = dht22.readHumidity();
-    float temperature_DHT22 = dht22.readTemperature(); //   Celsius
+    float temperature_DHT22 = dht22.readTemperature(); //Celsius
 
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 2; i++
     {
         float humidity_DHT11 = dht11.readHumidity();
-        float temperature_DHT11 = dht11.readTemperature(); //   Celsius
+        float temperature_DHT11 = dht11.readTemperature(); //Celsius
 
         float deltaTemp = abs(temperature_DHT22 - temperature_DHT11);
 
